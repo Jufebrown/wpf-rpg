@@ -15,7 +15,7 @@ namespace Engine.ViewModels
         {
             CurrentPlayer = new Player();
             CurrentPlayer.Name = "Jufe";
-            CurrentPlayer.NameCharacterClass = "Fighter";
+            CurrentPlayer.CharacterClass = "Fighter";
             CurrentPlayer.HitPoints = 10;
             CurrentPlayer.Gold = 100000;            
             CurrentPlayer.ExperiencePoints = 0;            
