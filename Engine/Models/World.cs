@@ -21,5 +21,18 @@ namespace Engine.Models
 
             _locations.Add(loc);
         }
+
+        public Location LocationAt(int xCoodinate, int yCoordinate)
+        {
+            foreach(Location loc in _locations)
+            {
+                if(loc.XCoordinate == xCoodinate && loc.YCoordinate == yCoordinate)
+                {
+                    return loc;
+                }
+            }
+
+            return null;
+        }
     }
 }
