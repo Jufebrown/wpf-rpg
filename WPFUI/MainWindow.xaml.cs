@@ -30,5 +30,10 @@ namespace WPFUI
 
             DataContext = _gameSession;
         }
+
+        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
