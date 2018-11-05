@@ -48,8 +48,7 @@
             <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.ExperiencePoints}"/>
             <Label Grid.Row="5" Grid.Column="0" Content="Level:"/>
             <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
-            <Button Grid.Row="5" Grid.Column="1" Content="Add XP" Click="ButtonBase_OnClick" Margin="0.333,0.333,-0.333,1.333"/>
-
+            
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1" Background="Beige">
