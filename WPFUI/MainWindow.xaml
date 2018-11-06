@@ -98,7 +98,7 @@
             </TabControl>
         </Grid>
 
-                <Grid Grid.Row="2" Grid.Column="1" Background="Lavender">
+        <Grid Grid.Row="2" Grid.Column="1" Background="Lavender">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
