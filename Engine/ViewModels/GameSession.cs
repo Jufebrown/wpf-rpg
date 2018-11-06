@@ -74,8 +74,7 @@ namespace Engine.ViewModels
                 Level = 1
             };
 
-            WorldFactory factory = new WorldFactory();
-            CurrentWorld = factory.CreateWorld();
+            CurrentWorld = WorldFactory.CreateWorld();
 
             CurrentLocation = CurrentWorld.LocationAt(0, -1);
         }
@@ -92,6 +91,7 @@ namespace Engine.ViewModels
         public void MoveSouth()
         {
             CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
+        }
       
         public void MoveWest()
         {
