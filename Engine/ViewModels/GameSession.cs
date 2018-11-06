@@ -29,5 +29,25 @@ namespace Engine.ViewModels
 
             CurrentLocation = CurrentWorld.LocationAt(0, 0);
         }
+
+        public void MoveNorth()
+        {
+
+        }
+
+        public void MoveEast()
+        {
+
+        }
+
+        public void MoveSouth()
+        {
+
+        }
+
+        public void MoveWest()
+        {
+
+        }
     }
 }
