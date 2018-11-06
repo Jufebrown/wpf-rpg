@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         FontSize="11pt"
         Title="SuperAdventure 2" Height="768" Width="1024">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
