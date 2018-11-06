@@ -11,7 +11,9 @@ namespace Engine.ViewModels
 {
     public class GameSession : INotifyPropertyChanged
     {
-        public Location _currentLocation;
+        private Location _currentLocation;
+
+        public World CurrentWorld { get; set; }
         public Player CurrentPlayer { get; set; }
         public Location CurrentLocation
         {
@@ -19,6 +21,7 @@ namespace Engine.ViewModels
             set
             {
                 _currentLocation = value;
+
                 OnPropertyChanged("CurrentLocation");
                 OnPropertyChanged("HasLocationToNorth");
                 OnPropertyChanged("HasLocationToEast");
@@ -26,7 +29,6 @@ namespace Engine.ViewModels
                 OnPropertyChanged("HasLocationToSouth");
             }
         }
-        public World CurrentWorld { get; set; }
 
         public bool HasLocationToNorth
         {
@@ -73,7 +75,7 @@ namespace Engine.ViewModels
             WorldFactory factory = new WorldFactory();
             CurrentWorld = factory.CreateWorld();
 
-            CurrentLocation = CurrentWorld.LocationAt(0, 0);
+            CurrentLocation = CurrentWorld.LocationAt(0, -1);
         }
 
         public void MoveNorth()
