@@ -90,7 +90,7 @@ namespace Engine.ViewModels
 
             CurrentWorld = WorldFactory.CreateWorld();
 
-            CurrentLocation = CurrentWorld.LocationAt(0, 2);
+            CurrentLocation = CurrentWorld.LocationAt(0, -1);
         }
 
         public void MoveNorth()
