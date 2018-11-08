@@ -11,7 +11,7 @@ namespace Engine.Models
         private GameItem _item;
         private int _quantity;
 
-        private GameItem Item
+        public GameItem Item
         {
             get { return _item; }
             set
