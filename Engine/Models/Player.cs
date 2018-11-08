@@ -44,7 +44,6 @@ namespace Engine.Models
 
         public Player()
         {
-            Inventory = new ObservableCollection<GameItem>();
             Quests = new ObservableCollection<QuestStatus>();
         }
 
