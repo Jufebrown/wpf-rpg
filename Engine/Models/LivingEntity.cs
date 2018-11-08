@@ -11,6 +11,7 @@ namespace Engine.Models
         private int _currentHitPoints;
         private int _maximumHitPoints;
         private int _gold;
+        private int _level;
 
         public string Name
         {
@@ -49,6 +50,16 @@ namespace Engine.Models
             {
                 _gold = value;
                 OnPropertyChanged(nameof(Gold));
+            }
+        }
+
+        public int Level
+        {
+            get { return _level; }
+            set
+            {
+                _level = value;
+                OnPropertyChanged(nameof(Level));
             }
         }
 
