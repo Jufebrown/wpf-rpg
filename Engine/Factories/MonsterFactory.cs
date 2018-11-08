@@ -42,7 +42,7 @@ namespace Engine.Factories
         {
             if(RandomNumberGenerator.NumberBetween(1,100) <= percentage)
             {
-                monster.AddItemToInventory(ItemFactory.CreateGameItem(itemID);
+                monster.AddItemToInventory(ItemFactory.CreateGameItem(itemID));
             }
         }
     }
