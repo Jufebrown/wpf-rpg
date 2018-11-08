@@ -46,6 +46,7 @@ namespace Engine.Models
             get { return _gold; }
             set
             {
+                _gold = value;
                 OnPropertyChanged(nameof(Gold));
             }
         }
