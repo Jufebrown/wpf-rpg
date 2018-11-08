@@ -72,6 +72,16 @@ namespace Engine.Models
             GroupedInventory = new ObservableCollection<GroupedInventoryItem>();
         }
 
+        public void TakeDamage(int hitPointsOfDamage)
+        {
+            CurrentHitPoints = 0;
+            if (IsDead)
+            {
+                CurrentHitPoints = 0;
+                RaiseOnKilledEvent();
+            }
+        }
+
         public void Heal(int hitPointsToHeal)
         {
             CurrentHitPoints += hitPointsToHeal;
