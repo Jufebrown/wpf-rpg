@@ -3,6 +3,9 @@ using System.Windows.Documents;
 using Engine.ViewModels;
 using Engine.EventArgs;
 using Engine.Models;
+using System.Collections.Generic;
+using System;
+using System.Windows.Input;
 
 namespace WPFUI
 {
