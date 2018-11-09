@@ -137,6 +137,12 @@ namespace Engine.Models
             CurrentWeapon.PerformAction(this, target);
         }
 
+        public void UseCurrentConsumable()
+        {
+            CurrentConsumable.PerformAction(this, this);
+            RemoveItemFromInventory(CurrentConsumable);
+        }
+
         public void TakeDamage(int hitPointsOfDamage)
         {
             CurrentHitPoints = 0;
