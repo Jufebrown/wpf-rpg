@@ -6,6 +6,7 @@ using Engine.Models;
 using System.Collections.Generic;
 using System;
 using System.Windows.Input;
+using System.Windows.Controls;
 
 namespace WPFUI
 {
@@ -93,6 +94,21 @@ namespace WPFUI
             if (_userInputActions.ContainsKey(e.Key))
             {
                 _userInputActions[e.Key].Invoke();
+            }
+        }
+
+        private void SetTabFocusTo(string tabName)
+        {
+            foreach(object item in PlayerDataTabControl.Items)
+            {
+                if(item is TabItem tabItem)
+                {
+                    if(tabItem.Name == tabItem)
+                    {
+                        tabItem.IsSelected = true;
+                        return;
+                    }
+                }
             }
         }
     }

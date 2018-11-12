@@ -122,7 +122,8 @@
 
         <!--Inventory and Quests-->
         <Grid Grid.Row="2" Grid.Column="0" Background="BurlyWood">
-            <TabControl x:Name="Inventory">
+            
+            <TabControl x:Name="PlayerDataTabControl">
                 <TabItem Header="Inventory" x:Name="InventoryTabItem">
                     <DataGrid ItemsSource="{Binding CurrentPlayer.Inventory}" AutoGenerateColumns="False" HeadersVisibility="Column">
                         <DataGrid.Columns>
