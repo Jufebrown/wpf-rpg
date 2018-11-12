@@ -103,7 +103,7 @@ namespace WPFUI
             {
                 if(item is TabItem tabItem)
                 {
-                    if(tabItem.Name == tabItem)
+                    if(tabItem.Name == tabName)
                     {
                         tabItem.IsSelected = true;
                         return;
