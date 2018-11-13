@@ -1,17 +1,16 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using Engine.Models;
-using Engine.Actions;
-using System;
 using System.IO;
+using System.Linq;
 using System.Xml;
+using Engine.Actions;
+using Engine.Models;
 using Engine.Shared;
 
 namespace Engine.Factories
 {
     public static class ItemFactory
     {
-        private const string GAME_DATA_FILENAME = "\\GameData\\GameItems.xml";
+        private const string GAME_DATA_FILENAME = ".\\GameData\\GameItems.xml";
 
         private static readonly List<GameItem> _standardGameItems = new List<GameItem>();
 
@@ -44,30 +43,34 @@ namespace Engine.Factories
 
         private static void LoadItemsFromNodes(XmlNodeList nodes)
         {
-            if(nodes == null)
+            if (nodes == null)
             {
                 return;
             }
 
-            foreach(XmlNode node in nodes)
+            foreach (XmlNode node in nodes)
             {
                 GameItem.ItemCategory itemCategory = DetermineItemCategory(node.Name);
 
-                GameItem gameItem = new GameItem(itemCategory, 
-                    node.AttributeAsInt("ID"), 
-                    node.AttributeAsString("Name"), 
-                    node.AttributeAsInt("Price"), 
-                    itemCategory == GameItem.ItemCategory.Weapon);
+                GameItem gameItem =
+                    new GameItem(itemCategory,
+                                 node.AttributeAsInt("ID"),
+                                 node.AttributeAsString("Name"),
+                                 node.AttributeAsInt("Price"),
+                                 itemCategory == GameItem.ItemCategory.Weapon);
 
-                if(itemCategory == GameItem.ItemCategory.Weapon)
+                if (itemCategory == GameItem.ItemCategory.Weapon)
                 {
-                    gameItem.Action = new AttackWithWeapon(gameItem, 
-                        node.AttributeAsInt("MinimumDamage"), 
-                        node.AttributeAsInt("MaximumDamage"));
+                    gameItem.Action =
+                        new AttackWithWeapon(gameItem,
+                                             node.AttributeAsInt("MinimumDamage"),
+                                             node.AttributeAsInt("MaximumDamage"));
                 }
-                else if(itemCategory == GameItem.ItemCategory.Consumable)
+                else if (itemCategory == GameItem.ItemCategory.Consumable)
                 {
-                    gameItem.Action = new Heal(gameItem, node.AttributeAsInt("HitPointsToHeal"));                    
+                    gameItem.Action =
+                        new Heal(gameItem,
+                                 node.AttributeAsInt("HitPointsToHeal"));
                 }
 
                 _standardGameItems.Add(gameItem);
